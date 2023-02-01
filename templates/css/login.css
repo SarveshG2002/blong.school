@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.text-sign{
+font-size: 3.5rem;
+color:white;
+background-color:#cccccc;
+font-weight: 600;
+height: 30vh;
+padding-left: 6rem;
+padding-top: 3rem;
+}
+.ho-lo-nav{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 8rem;
+  color: rgb(67, 64, 64);
+}
+.ho-lo-nav a{
+  color: #777777;
+}
+.fa-chevron-right{
+ font-size: 0.7rem;
+ padding: 0.2rem 0.5rem;
+}
+.login-pg{
+  width: 40%;
+align-content: center;
+margin-left: 30rem;
+border: 1px solid black;
+}
+form{
+  margin-left: 4rem;
+}
+.title-main{
+  text-align: center;
+  height: 15vh;
+}
+.title{
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  font-weight: 600;
+}
+.subtitle{
+ color: #777777;
+  margin-top: 1rem;
+}
+.form-group span{
+font-weight: 600;
+}
+.content-box{
+  /* width: 30%; */
+  margin-top: 1rem;
+}
+.form-group{
+  margin-top: 1rem;
+}
+
+input[type=email] {
+  width: 95%;
+  height:5vh;
+  margin-top: 0.6rem;
+}
+input[type=password] {
+  width: 95%;
+  height: 5vh;
+  margin-top: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+.forget{
+  color: #34c7dc;
+}
+.forget a{
+  color: #34c7dc;
+}
+
+ .forget .btn{
+  
+    background: gray;
+    padding: 0.5rem 2rem;
+    margin: 1rem 0rem 0rem 6rem;
+
+}
+.account{
+  margin-top: 1rem;
+  margin-left: 6rem;
+  margin-bottom: 4rem;
+}
+.account a{
+  color: #34c7dc;
+}
+@media screen and (max-width: 767px) {
+.login-pg {
+  width: 84%;
+  align-content: center;
+  margin-left: 2rem;
+  border: 1px solid black;
+}
+form {
+  margin-left: 1rem;
+}
+input[type=password] {
+  border: 1px solid #777777;
+}
+input[type=email] {
+  border: 1px solid #777777;
+}
+.forget .btn {
+  margin: 1rem 0rem 0rem 0rem;
+}
+
+.account {
+  margin-left: 0rem;
+}
+
+
+
+
+}
+
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 1050px) {
+
+.login-pg {
+  width: 68%;
+  margin-left: 8rem;
+}
+input[type=password] {
+  border: 1px solid #777777;
+}
+input[type=email] {
+  border: 1px solid #777777;
+}
+form hr{
+  margin-left: -4rem;
+}
+.text-sign {
+  height: 20vh;
+}
+}

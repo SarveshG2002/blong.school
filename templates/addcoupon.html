@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="B-Long school" />
+
+    <meta name="keywords" content="LMS,Learning Management System" />
+    <meta name="description" content="Nice application" />
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/addcoupons.css') }}">
+
+    <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i"
+        rel="stylesheet">
+    <!-- for apple-keyboard-command icon -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+
+</head>
+
+<body>
+    <!-- PAGE CONTAINER-->
+    <h4 class="page-title">
+        <div class="title-1">
+            <div class="icon-app"><iconify-icon icon="mdi:apple-keyboard-command"></iconify-icon></div>
+            <a> Add Coupens</a>
+        </div>
+
+    </h4>
+    <hr>
+
+    <div class="card">
+        <h4 class="title-2">COUPON ADD FORM</h4>
+    <hr>
+        <div class="form">
+            <div class="container">
+                <div class="search">
+                    <div>
+                        <p>Course</p>
+                    </div>
+                </div><input type="text" placeholder="">
+            </div>
+
+            <div class="secline">
+                <div class="code">
+                    <label for="text">Coupon Code</label></br>
+                    <input type="code" placeholder="" name="text" id="text" required>
+                </div>
+                <div class="date">
+                    <label for="date">Valid Till</label></br>
+                    <input type="date" id="date" placeholder="" name="date">
+                </div>
+                <div class="code">
+                    <label for="text">Amount</label></br>
+                    <input type="code" placeholder="" name="text" id="text" required>
+                </div>
+                                
+            </div>
+
+            <label for="counts">
+                <select name="counts" id="counts">
+        
+                    <option value="volvo">%</option>
+                    <option value="saab">Amount</option>        
+                </select>
+            </label>
+
+
+            <button type="submit" class="registerbtn">submit</button>
+        </div>
+
+
+    </div>
+    </div> <!-- end card body-->
+
+
+</body>
+
+</html>

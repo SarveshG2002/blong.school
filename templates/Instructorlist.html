@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="B-Long school" />
+
+    <meta name="keywords" content="LMS,Learning Management System" />
+    <meta name="description" content="Nice application" />
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/Instructorlist.css') }}">
+
+    <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i"
+        rel="stylesheet">
+    <!-- for apple-keyboard-command icon -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+    <script>  
+    var teacher_data={}
+        function add_inst(){
+            $(document).ready(function () {
+                $("#mainContent").load("instList")
+        })
+        }
+    </script>
+
+</head>
+
+<body>
+    <!-- PAGE CONTAINER-->
+    <h4 class="page-title">
+        <div class="title-1">
+            <div class="icon-app"><iconify-icon icon="mdi:apple-keyboard-command"></iconify-icon></div>
+            <a> Instructor</a>
+        </div>
+        <button class="add-cat" onclick="add_inst()">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            <a >Add instructors</a>
+        </button>
+    </h4>
+
+    <div class="card">
+        <h4 class="title-2">Instructor</h4>
+        <div class="drop-search">
+            <div class="drop-no">
+                <label for="counts">Show
+                    <select name="counts" id="counts">
+
+                        <option value="volvo">10</option>
+                        <option value="saab">25</option>
+                        <option value="volvo">50</option>
+                        <option value="saab">500</option>
+
+
+                    </select>entries
+                </label>
+            </div>
+            <div class="search">
+                <a>Search:<input type="text" placeholder=""></a>
+            </div>
+
+        </div>
+        <hr>
+        
+
+   
+
+ 
+            <div class="table-one">
+                <table id="basic-datatable" class="table-col">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Photo</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Number Of Active Course</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    
+                    <tbody>
+                        <tr>
+                            <th>1</th>
+                            <th>
+                                <img src="images/pro-1.jpg">
+                            </th>
+                            <th>Nikhil K</th>
+                            <th>nikhil@upskillmaster.com</th>
+                            <th>0 active courses  </th>
+                            <th>
+                                <div class="dropdown1">
+                                    <button class="dropbtn"> <i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    <div class="dropdown-content">
+                                        <a
+                                            href="https://blong.school/admin/speciality_form/edit_speciality_form/27">Add</a>
+                                        <a href="https://blong.school/admin/speciality/delete/27">Delete</a>
+                                    </div>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>2</th>
+                            <th>  <img src="images/pro-2.jpg"></th>
+                            <th>Pooja  Bodke</th>
+                            <th>bodkep70@gmail.com</th>
+                            <th>0 active courses  </th>
+                            <th>
+                                <div class="dropdown1">
+                                    <button class="dropbtn"> <i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    <div class="dropdown-content">
+                                        <a
+                                            href="https://blong.school/admin/speciality_form/edit_speciality_form/27">Add</a>
+                                        <a href="https://blong.school/admin/speciality/delete/27">Delete</a>
+                                    </div>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>3</th>
+                            <th>  <img src="images/pro-3.jpg"></th>
+                            <th>Shailesh Yadav</th>
+                            <th>ONLINEMOCKKING@GMAIL.COM</th>
+                            <th>0 active courses</th>
+                            <th>
+                                <div class="dropdown1">
+                                    <button class="dropbtn"> <i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    <div class="dropdown-content">
+                                        <a
+                                            href="https://blong.school/admin/speciality_form/edit_speciality_form/27">Add</a>
+                                        <a href="https://blong.school/admin/speciality/delete/27">Delete</a>
+                                    </div>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>4</th>
+                            <th>  <img src="images/pro-4.jpg"></th>
+                            <th>Affix  Center</th>
+                            <th>abhi.affix@gmail.com</th>
+                            <th>0 active courses</th>
+                            <th>
+                                <div class="dropdown1">
+                                    <button class="dropbtn"> <i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    <div class="dropdown-content">
+                                        <a
+                                            href="https://blong.school/admin/speciality_form/edit_speciality_form/27">Add</a>
+                                        <a href="https://blong.school/admin/speciality/delete/27">Delete</a>
+                                    </div>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>5</th>
+                            <th>  <img src="images/pro-5.jpg"></th>
+                            <th>Dr Lalit Dabholkar</th>
+                            <th>Lalit@auriga.consulting</th>
+                            <th>0 active courses</th>
+                            <th>
+                                <div class="dropdown1">
+                                    <button class="dropbtn"> <i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    <div class="dropdown-content">
+                                        <a
+                                            href="https://blong.school/admin/speciality_form/edit_speciality_form/27">Add</a>
+                                        <a href="https://blong.school/admin/speciality/delete/27">Delete</a>
+                                    </div>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th>0 active courses</th>
+                            <th>
+                                <div class="dropdown1">
+                                    <button class="dropbtn"> <i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    <div class="dropdown-content">
+                                        <a
+                                            href="https://blong.school/admin/speciality_form/edit_speciality_form/27">Add</a>
+                                        <a href="https://blong.school/admin/speciality/delete/27">Delete</a>
+                                    </div>
+                                </div>
+                            </th>
+                        </tr>
+                    </tbody>
+                        
+                </table>
+            </div>
+        </div>
+
+
+
+      
+
+        <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a class="active" href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">&raquo;</a>
+        </div>
+    </div> <!-- end card body-->
+
+
+</body>
+
+</html>

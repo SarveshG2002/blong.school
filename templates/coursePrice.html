@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .coursePrice {
+            display: grid;
+            width: 80%;
+            grid-template-columns: 10% 90%;
+            row-gap: 20px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="coursePrice">
+        <div>
+        </div>
+        <div>
+            <input type="checkbox" id="chk" onclick="hide_cotnent()">
+            Check if this is a free course
+        </div>
+        <div id="hp">
+            Course price (Rs.)
+        </div>
+        <input type="text" placeholder="Enter price" id="coursePrice">
+        <div id="hpd">
+            Discounted price (Rs.)
+        </div>
+        <input type="text" placeholder="Enter Discount" id="courseDiscount">
+        <div></div>
+        <button style="width: fit-content;background-color: blueviolet;padding: 5px; margin: auto;"
+            onclick="next()">Update and next</button>
+    </div>
+    <script>
+        function hide_cotnent() {
+            let chk = document.getElementById("chk")
+            if (chk.checked == true) {
+                document.getElementById("hp").style.display = "none"
+                document.getElementById("hpd").style.display = "none"
+                document.getElementById("coursePrice").style.display = "none"
+                document.getElementById("courseDiscount").style.display = "none"
+            }
+            else {
+                document.getElementById("hp").style.display = "block"
+                document.getElementById("hpd").style.display = "block"
+                document.getElementById("coursePrice").style.display = "block"
+                document.getElementById("courseDiscount").style.display = "block"
+            }
+        }
+        function next() {
+            $(document).ready(function () {
+                let chk = document.getElementById("chk")
+                if (chk.checked == true) {
+                    price = { coursePrice: 0, courseDiscount: 0 }
+                    $.extend(addCourseDataTemp, { coursePrice: 0, courseDiscount: 0 })
+
+                }
+                else {
+                    price = { coursePrice: document.getElementById("courseDiscount").value, courseDiscount: document.getElementById("courseDiscount").value }
+                    $.extend(addCourseDataTemp, { coursePrice: document.getElementById("coursePrice").value, courseDiscount: document.getElementById("courseDiscount").value })
+
+                }
+                //addCourseData["price"]={coursePrice:document.getElementById("courseDiscount").value,courseDiscount:document.getElementById("courseDiscount").value}
+                $("#sec_form").load("coursesMedia")
+                document.getElementById("sec4").style.backgroundColor = "#727cf5"
+                document.getElementById("sec1").style.backgroundColor = "#727cf5"
+                document.getElementById("sec3").style.backgroundColor = "#727cf5"
+                document.getElementById("sec2").style.backgroundColor = "#727cf5"
+                document.getElementById("sec5").style.backgroundColor = "#9098ee"
+                document.getElementById("sec6").style.backgroundColor = "#727cf5"
+                document.getElementById("sec7").style.backgroundColor = "#727cf5"
+            })
+        }
+    </script>
+</body>
+
+</html>

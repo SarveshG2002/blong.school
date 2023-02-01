@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        .header {
+            width: 100%;
+            background-color: #313a46;
+            height: 73px;
+        }
+
+        .logo {
+            /*background-color: aliceblue;*/
+            width: 170px;
+            height: 100%;
+            margin-left: 3%;
+        }
+
+        .logo img {
+            width: 100%;
+            margin: 15px auto;
+        }
+
+        .l {
+            display: inline-block;
+            float: left;
+        }
+
+        .menu_icon {
+            margin-top: 20px;
+            margin-left: 20px;
+            display: none;
+            background-color: aliceblue;
+            border-radius: 10px;
+        }
+
+        .menu_icon:active {
+            background-color: #3c4655;
+        }
+
+        .menu_icon img {
+            width: 90%;
+        }
+
+        .btxt {
+            width: 160px;
+            color: aliceblue;
+        }
+
+        .btxt h3 {
+            margin-top: 25px;
+        }
+
+        .vsite {
+            margin-top: 27px;
+        }
+
+        .vsite a {
+            padding: 7px;
+            border: 1px solid white;
+            border-radius: 3px;
+            color: aliceblue;
+            text-decoration: none
+        }
+
+        .vsite a:hover {
+            background-color: aliceblue;
+            color: black;
+        }
+
+        .admin {
+            width: 180px;
+            height: 100%;
+            background-color: #3c4655;
+            float: right;
+            margin-right: 3%;
+        }
+
+        .circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-top: 17px;
+            margin-left: 10px;
+            background-color: #313a46;
+            display: inline-block;
+            float: left;
+        }
+
+        .circle img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        .atxt {
+            display: inline-block;
+            margin-top: 20px;
+            margin-left: 10px;
+            color: aliceblue;
+        }
+
+        .side_show {
+            position: absolute;
+            z-index: 1;
+            display: none;
+            width: 25%;
+            background-color: #ffffff;
+            box-shadow: #3c4655;
+        }
+
+        .hide_but {
+            display: none;
+        }
+
+        @media screen and (max-width: 1000px) {
+            .logo img {
+                content: url("{{ url_for('static',filename='logo-light-sm.png') }}");
+                width: 80%;
+            }
+
+            .logo {
+                margin-left: 15px;
+                width: fit-content;
+            }
+
+
+        }
+
+        @media screen and (max-width: 850px) {
+            .menu_icon {
+                display: block;
+            }
+
+            .side_show {
+                width: 35%;
+            }
+        }
+
+        @media screen and (max-width: 650px) {
+            .side_show {
+                width: 50%;
+            }
+
+            .admin {
+                width: fit-content;
+                margin-right: 5%;
+            }
+
+            .atxt {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 460px) {
+            .side_show {
+                width: 70%;
+            }
+
+            .btxt {
+                display: none;
+            }
+
+            .vsite {
+                display: none;
+            }
+
+            .hide_but {
+                display: block;
+                margin-top: 27px;
+                margin-left: 20px;
+            }
+
+            .hide_but a {
+                padding: 7px;
+                border: 1px solid white;
+                border-radius: 3px;
+                color: aliceblue;
+                text-decoration: none
+            }
+
+            .hide_but a:hover {
+                background-color: aliceblue;
+                color: black;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="side_show" id="side_show">
+            <div class="slogo">
+                <img src="{{ url_for('static',filename='logo-light.png') }}" alt="" style="float: left;"><div class="close" style="float: right;" class="close" onclick="display_side('0')">X</div>
+                <!--<img src="images/logo-light.png" alt="">-->
+                <div style="clear: both;">B-long school</div>
+
+            </div>
+            <div class="navigation">
+                <h5>NAVIGATION<h5>
+            </div>
+            <div class="navigation_bar">
+
+                <img src="{{ url_for('static',filename='Dashboard.png') }}" alt="">
+            <h style="margin: 3px;font-size: 20px;">Dashboard</h>
+
+            <img src="{{ url_for('static',filename='catagories.png') }}" alt="">
+            <h style="margin: 3px;font-size: 20px;">Catagories</h>
+
+            <img src="{{ url_for('static',filename='catagories.png') }}" alt="">
+            <h style="margin: 3px;font-size: 20px;">Courses</h>
+
+            <img src="{{ url_for('static',filename='catagories.png') }}" alt="">
+            <h style="margin: 3px;font-size: 20px;">Coupens</h>
+
+            <img src="{{ url_for('static',filename='event.png') }}" alt="">
+            <h style="margin: 3px;font-size: 20px;">Events</h>
+
+            <img src="{{ url_for('static',filename='instructor.png') }}" alt="">
+            <div>
+                <h style="margin: 3px;font-size: 20px;" onclick="show_insta()">Instructor ></h>
+                <div class="extra" id="extras">
+                    <h style="margin: 3px;font-size: 20px; width: 100%;text-align: left;" onclick="show_instructorList()">Instructor list</h><br>
+                    <h style="margin: 3px;font-size: 20px; width: 100%;text-align: left;" onclick="show_instructorPay()">Instructor payout</h><br>
+                    <h style="margin: 3px;font-size: 20px; width: 100%;text-align: left;" onclick="show_instructorSet()">Instructor setting</h><br>
+                    <h style="margin: 3px;font-size: 20px; width: 100%;text-align: left;">Instructor application</h><br>
+                </div>
+            </div>
+
+            <img src="{{ url_for('static',filename='students.png') }}" alt="">
+            <h style="margin: 3px;font-size: 20px;">Students</h>
+
+            <img src="{{ url_for('static',filename='enrollment.png') }}" alt="">
+            <h style="margin: 3px;font-size: 20px;">Enrolment</h>
+
+            <img src="{{ url_for('static',filename='report.png') }}" alt="">
+            <h style="margin: 3px;font-size: 20px;">Report</h>
+
+            <img src="{{ url_for('static',filename='message.png') }}" alt="">
+            <h style="margin: 3px;font-size: 20px;">Message</h>
+
+            <img src="{{ url_for('static',filename='addons.png') }}" alt="">
+            <h style="margin: 3px;font-size: 20px;">Addons</h>
+
+            <img src="{{ url_for('static',filename='setting.png') }}" alt="">
+            <h style="margin: 3px;font-size: 20px;">Settings</h>
+
+            <img src="{{ url_for('static',filename='profile.png') }}" alt="">
+            <h style="margin: 3px;font-size: 20px;">Manage profile</h>
+
+
+                <!--
+                <img src="images/Dashboard.png" alt="">
+                <h style="margin: 3px;font-size: 20px;">Dashboard</h>
+                <img src="images/catagories.png" alt="">
+                <h style="margin: 3px;font-size: 20px;">Catagories</h>
+                <img src="images/catagories.png" alt="">
+                <h style="margin: 3px;font-size: 20px;">Courses</h>
+                <img src="images/catagories.png" alt="">
+                <h style="margin: 3px;font-size: 20px;">Coupens</h>
+                <img src="images/event.png" alt="">
+                <h style="margin: 3px;font-size: 20px;">Events</h>
+                <img src="images/instructor.png" alt="">
+                <h style="margin: 3px;font-size: 20px;">Instructor</h>
+                <img src="images/students.png" alt="">
+                <h style="margin: 3px;font-size: 20px;">Students</h>
+                <img src="images/enrollment.png" alt="">
+                <h style="margin: 3px;font-size: 20px;">Enrolment</h>
+                <img src="images/report.png" alt="">
+                <h style="margin: 3px;font-size: 20px;">Report</h>
+                <img src="images/message.png" alt="">
+                <h style="margin: 3px;font-size: 20px;">Message</h>
+                <img src="images/addons.png" alt="">
+                <h style="margin: 3px;font-size: 20px;">Addons</h>
+                <img src="images/setting.png" alt="">
+                <h style="margin: 3px;font-size: 20px;">Settings</h>
+                <img src="images/profile.png" alt="">
+                <h style="margin: 3px;font-size: 20px;">Manage profile</h>
+                -->
+            </div>
+        </div>
+        <div class="logo l">
+            <img src="{{ url_for('static',filename='logo-light.png') }}" alt="" id="logoa" >
+            <!--<img src="images/logo-light.png" alt="">-->
+        </div>
+        <div class="menu_icon l" onclick="display_side('1')">
+            <img src="{{ url_for('static',filename='menu.png') }}" alt="">
+            <!--<img src="images/menu.png" alt="">-->
+        </div>
+        <div class="btxt l">
+            <center>
+                <h3>B-Long school</h3>
+            </center>
+        </div>
+        <div class="vsite l">
+            <a href="">Visit website</a>
+        </div>
+        <div class="hide_but l">
+            <a>B-long school</a>
+        </div>
+        <div class="admin">
+            <div class="circle">
+                <img src="{{ url_for('static',filename='logo-light.png') }}" alt="" srcset="">
+                <!--<img src="images/logo-light.png" alt="">-->
+            </div>
+            <div class="atxt">
+                B-Long school<br>
+                Admins
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var side_show=document.getElementById("side_show")
+        function display_side(va) {
+            if(va=="1"){
+                document.getElementById("side_show").style.display = "block"
+            }
+            else{
+                document.getElementById("side_show").style.display = "none"
+            }
+            
+        }
+        window.onclick = function (event) {
+                //document.getElementById("side_show").style.display = "none"
+        }
+    </script>
+</body>
+
+</html>

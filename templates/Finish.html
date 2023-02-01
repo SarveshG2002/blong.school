@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="B-Long school" />
+
+  <meta name="keywords" content="LMS,Learning Management System" />
+  <meta name="description" content="Nice application" />
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/addinstructorlist.css') }}">
+
+  <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i"
+    rel="stylesheet">
+  <!-- for apple-keyboard-command icon -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+  <script src="ckeditor/ckeditor.js"></script>
+  <script>  
+    function logincred_instruct(){
+        $(document).ready(function () {
+            $("#mainContent").load("logincred_instruct")
+    })
+    }
+    
+    function social_instruct(){
+        $(document).ready(function () {
+            $("#mainContent").load("social_instruct")
+    })
+    }
+    function pay_instruct(){
+        $(document).ready(function () {
+            $("#mainContent").load("pay_instruct")
+    })
+    }
+    function finish_instruct(){
+        $(document).ready(function () {
+            $("#mainContent").load("finish_instruct")
+    })
+    }
+    function add_inst(){
+            $(document).ready(function () {
+                $("#mainContent").load("instList")
+        })
+        }
+    </script>
+</head>
+
+<body>
+  <!-- PAGE CONTAINER-->
+  <h4 class="page-title">
+    <div class="title-1">
+      <div class="icon-app"><iconify-icon icon="mdi:apple-keyboard-command"></iconify-icon></div>
+      <a> Instructor</a>
+    </div>
+
+  </h4>
+
+  <div class="card">
+    <h4 class="title-2">Instructor Add Form</h4>
+    <div class="menu-bar">
+      <ul>
+        <li class="active"><a><i class="fa fa-info-circle" aria-hidden="true"></i>Basic
+            info</a></li>
+        <li><a onclick="logincred_instruct()"><i class="fa fa-lock"></i>Login credentials</a></li>
+        <li><a onclick="social_instruct()"><i class="fa fa-wifi" aria-hidden="true"></i>Social information</a></li>
+        <li><a onclick="pay_instruct()"><i class="fa fa-euro-sign" aria-hidden="true"></i>Payment info</a></li>
+        <li><a onclick="finish_instruct()"><i class="fa fa-check"></i>Finish</a></li>
+      </ul>
+    </div>
+
+    <section class="middle">
+      <i class="fa fa-check"></br>Thank You!</i>
+      <p>You are just one click away</p>
+      <button type="submit" class="registerbtn-main">submit</button>
+    
+      <div class="btn">
+        <button type="submit" class="registerbtn3" onclick=""><a><i class="fa fa-arrow-left"></i></a></button>
+     
+      </div>
+    </section>
+
+
+
+
+
+
+
+</body>
+
+</html>
