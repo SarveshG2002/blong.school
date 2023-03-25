@@ -1,0 +1,421 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+button span .carousel-control-next-icon{
+  color: black;
+}
+.carousel-inner img{
+  height: 125vh;
+  width: 100%;
+}
+.title{
+  color: white;
+  width: 70%;
+  margin-top: -5rem;
+  margin-left: -4rem;
+}
+.carousel-caption h1{
+  text-align: left;
+  
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.d-md-block{
+  margin-bottom: 17rem;
+  
+
+}
+.sub-title {
+  margin-left: -4rem;
+  width: 66%;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.btns-ban {
+  margin-right: 50rem;
+  margin-top: 2rem;
+  margin-left: -7rem;
+}
+
+.btn-1-ban {
+  background-color: #ffc000;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  text-decoration: none;
+}
+.btn-2-ban {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 1rem 2rem;
+    text-decoration: none;
+}
+.btn-1-ban:hover {
+  background-color: #e4af10;
+}
+.btn-2-ban:hover {
+  background-color: whitesmoke;
+}
+.three-tabs {
+  margin-top: -10.9rem;
+  position: absolute;
+  width: 100%;
+  padding: 0 7rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.stuf{
+  display: flex;
+  /* flex-wrap: wrap; */
+}
+.stuf p {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+.btn-1-tab {
+  background-color: #ffc000;
+  color: white;
+  border: none;
+  width: 26rem;
+  height: 25vh;
+}
+.btn-2-tab {
+  background-image: linear-gradient(to right, rgba(235, 184, 17, 0.976), rgb(255, 196, 0));
+  /* background-color: #ffc000; */
+  color: white;
+  border: none;
+  width: 26rem;
+  height: 25vh;
+}
+.btn-3-tab {
+  background-image: linear-gradient(to right, rgba(214, 167, 14, 0.976), rgb(255, 196, 0));
+  color: white;
+  border: none;
+  width: 26rem;
+  height: 25vh;
+}
+.icon img{
+  width: 3rem;
+  height:4rem;
+  margin-right: 1.5rem;
+  margin-left: 1rem;
+}
+.icon  img {
+  transition: transform .7s ease-in-out;
+}
+.icon img:hover {
+  transform: rotate(360deg);
+}
+
+/* cards */
+.most {
+  font-size: 2rem;
+  font-weight: 600;
+  color: black;
+  margin-top: 5rem;
+text-align: center;
+}
+.allcards {
+  margin-top: 7rem;
+}
+.card {
+  border: none;
+  border-radius: 0;
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+}
+.card-prize{
+  color: white;
+  background-color:rgb(65, 225, 246);
+ text-align: center;
+  width: 20%;
+}
+.pro-name{
+  display: flex;
+  justify-content: space-around;
+}
+.profile img{
+  width: 3rem;
+  height: 3rem;
+  border-radius: 2rem;
+}
+.pro-name a {
+  margin-top: 0.5rem;
+  color: gray;
+  text-decoration: none;
+  margin-right: 14rem;
+}
+.card-title {
+  width: 100%;
+  height: 2rem;
+  margin-top: 2rem;
+}
+.end-info{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 4rem;
+}
+.end-info .end-1 .fa{
+  color: gray;
+  height: 2rem;
+  width: 2rem ;
+  margin-right: -0.5rem;
+}
+
+.end-info .end-2 .fa{
+  color: gray;
+  height: 2rem;
+  width: 2rem ;
+  margin-right: -0.5rem;
+}
+.end-info .end-3 .fa{
+  color: #ffc000;
+  height: 2rem;
+  width: 2rem ;
+  margin-right: -1rem;
+}
+.end-3{
+  display: flex;
+  flex-wrap: wrap;
+}
+.allcards .carousel-inner {
+  padding: 1em;
+}
+.allcards .carousel-control-prev,
+.allcards .carousel-control-next {
+  background-color: #e1e1e1;
+  width: 6vh;
+  height: 6vh;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.allcards .carousel-control-prev span,
+.allcards .carousel-control-next span {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+@media screen and (min-width: 577px) {
+  .allcards  .cards-wrapper {
+    display: flex;
+  }
+  .allcards  .card {
+    margin: 0 0.5em;
+    width: calc(100% / 2);
+  }
+  .allcards  .image-wrapper {
+    height: 20vw;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 576px) {
+  .allcards  .card:not(:first-child) {
+    display: none;
+  }
+}
+
+.allcards .image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.card-2
+{
+  margin-bottom: 10rem;
+}
+.most-2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: black;
+  margin-top: 5rem;
+text-align: left;
+margin-left: 10rem;
+}
+.coming{
+  text-align: center;
+}
+.sec-cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 10rem;
+}
+.btn-sec {
+  /* margin-top: 5rem; */
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  margin-right: 3rem;
+    text-decoration: none;
+    border: 1px solid gray;   
+}
+.footer-up-main{
+  height: 15vh;
+  background-color: whitesmoke;
+}
+.footer-up-sec{
+  padding-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 32%;
+}
+.footer-up-sec p{
+  margin-top: 1rem;
+  margin-right: 2rem;
+}
+.go-signup{
+  background-color: #ffc000;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  
+}
+
+
+
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 1050px) {
+  .carousel-inner img {
+    height: 58vh;
+    width: 100%;
+}
+.d-md-block {
+  margin-bottom: 4rem;
+}
+.title {
+  color: white;
+  width: 72%;
+  margin-top: -5rem;
+  margin-left: -1rem;
+}
+.sub-title {
+  margin-left: -3rem;
+  width: 100%;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.btns-ban {
+  margin-right: 12rem;
+  margin-top: 2rem;
+  margin-left: -7rem;
+}
+
+.three-tabs {
+    padding: 0rem;
+    margin-top: 0rem;
+}
+.btn-1-tab {
+  width: 16rem;
+  height: 13vh;
+}
+.btn-2-tab {
+  width: 16rem;
+  height: 13vh;
+}
+.btn-3-tab {
+  width: 16rem;
+  height: 13vh;
+}
+.stuf{
+  margin-top: 2rem;
+}
+.profile img {
+  width: 3rem !important;
+  height: 3rem !important;
+  border-radius: 2rem;
+}
+.pro-name a {
+    margin-top: 0.5rem;
+    color: gray;
+    text-decoration: none;
+    margin-right: 0rem;
+}
+
+
+}
+
+
+
+
+@media screen and (max-width: 767px) {
+  .carousel-caption {
+    
+    color: black;
+  }
+  .title {
+    color: black;
+  }
+  .carousel-inner img {
+    height: 45vh;
+    width: 100%;
+}
+.carousel-caption h1 {
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.three-tabs {
+  margin-top: 0rem;
+  position: absolute;
+  width: 100%;
+  padding: 0;
+}
+.btn-1-tab {
+  width: 100%;
+  height: 14vh;
+}
+.btn-2-tab {
+  width: 100%;
+  height: 14vh;
+}
+.btn-3-tab {
+  width: 100%;
+  height: 14vh;
+} 
+.image-wrapper img{
+  height: 40vh;
+}
+.card{
+  margin-top: 3rem;
+}
+.profile img {
+  width: 3rem !important;
+  height: 3rem !important;
+  border-radius: 2rem;
+}
+.pro-name a {
+  margin-right: 10rem;
+  padding-left: 2rem;
+}
+.footer-up-main {
+  height: 30vh;
+  background-color: whitesmoke;
+}
+.most {
+  margin-top: 23rem;
+  margin-bottom: -7rem;
+}
+.most-2 {
+  margin-left: 3rem;
+}
+.sec-cards {
+  margin-left: 2rem;
+}
+.coming p{
+  margin-top: 1rem;
+}
+.footer-up-sec {
+  margin-left: 9%;
+}
+
+}
