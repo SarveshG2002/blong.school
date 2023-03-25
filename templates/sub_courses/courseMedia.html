@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .courseMedia {
+            display: grid;
+            width: 80%;
+            grid-template-columns: 20% 70%;
+            row-gap: 20px;
+            margin: auto;
+        }
+
+        @media screen and (max-width: 500px) {
+            .courseMedia {
+                grid-template-columns: 30% 70%;
+                row-gap: 10px;
+                margin: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="courseMedia">
+        <h>Course overview provider</h>
+        <select id="courseMedia" class="spaciality" style="margin-top: 0px;">
+            <option value="youtube">Youtube</option>
+            <option value="HTML5">HTML5</option>
+            <option value="Vimeo">Vimeo</option>
+        </select>
+        <h>Course overview url</h>
+        <input type="text" placeholder="E.g: https://www.youtube.com/watch?v=oBtf8Yglw2w" id="url">
+        <h>Course thumbnail</h>
+        <input type="file" id="thumbnail">
+        <div></div>
+        <button style="width: fit-content;background-color: blueviolet;padding: 5px; margin: auto;"
+            onclick="next()">Update and next</button>
+    </div>
+    <script>
+        function next() {
+            $(document).ready(function () {
+                let m = document.getElementById("courseMedia").value
+                let url = document.getElementById("url").value
+                let element = document.getElementById("thumbnail")
+                let file = element.files[0];
+                let reader = new FileReader();
+                let img;
+                reader.readAsDataURL(file);
+                reader.onloadend = function () {
+                    //addCourseData["media"]={courseMedia:m,url:url,thumbnail:f}
+                    
+                    media = { courseMedia: m, url: url, thumbnail: reader.result }
+                    $.extend(addCourseDataTemp, { courseMedia: m, url: url, thumbnail: reader.result })
+                    $("#sec_form").load("coursesSeo")
+                    document.getElementById("sec6").style.backgroundColor = "#9098ee"
+                    document.getElementById("sec1").style.backgroundColor = "#727cf5"
+                    document.getElementById("sec3").style.backgroundColor = "#727cf5"
+                    document.getElementById("sec2").style.backgroundColor = "#727cf5"
+                    document.getElementById("sec5").style.backgroundColor = "#727cf5"
+                    document.getElementById("sec4").style.backgroundColor = "#727cf5"
+                    document.getElementById("sec7").style.backgroundColor = "#727cf5"
+                }
+                })
+        }
+    </script>
+</body>
+
+</html>

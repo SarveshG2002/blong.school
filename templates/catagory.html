@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="B-Long school" />
+
+    <meta name="keywords" content="LMS,Learning Management System" />
+    <meta name="description" content="Nice application" />
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="category.css">-->
+    <link rel="stylesheet" href="/static/css/catagory.css">
+
+    <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i"
+        rel="stylesheet">
+    <!-- for apple-keyboard-command icon -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+
+</head>
+
+<body>
+    <!-- PAGE CONTAINER-->
+    <h4 class="page-title">
+        <div class="title-1">
+            <div class="icon-app"><iconify-icon icon="mdi:apple-keyboard-command"></iconify-icon></div>
+            <a> Categories</a>
+        </div>
+        <div onclick="add_cat()">
+            <button class="add-cat">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+                Add category
+            </button>
+        </div>
+    </h4>
+
+    <div class="card" id="card">
+        <h4 class="title-2">Categories</h4>
+        <div class="drop-search">
+            <div class="drop-no">
+                <label for="counts">Show
+                    <select name="counts" id="counts">
+
+                        <option value="volvo">10</option>
+                        <option value="saab">25</option>
+                        <option value="volvo">50</option>
+                        <option value="saab">500</option>
+
+
+                    </select>entries
+                </label>
+            </div>
+            <div class="search">
+                <a>Search:<input type="text" placeholder=""></a>
+            </div>
+
+        </div>
+        <hr>
+
+        <div class="table-one">
+            <table id="basic-datatable" class="table-col">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Category name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th>1</th>
+                        <th>MBA Healthcare Students</td>
+                        <th>
+                            <div class="dropdown1">
+                                <button class="dropbtn">. . .</button>
+                                <div class="dropdown-content">
+                                    <a href="https://blong.school/admin/speciality_form/edit_speciality_form/27">Add</a>
+                                    <a href="https://blong.school/admin/speciality/delete/27">Delete</a>
+                                </div>
+                            </div>
+
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>2</th>
+                        <th>Sales Representatives</th>
+                        <th>
+                            <div class="dropdown1">
+                                <button class="dropbtn">. . .</button>
+                                <div class="dropdown-content">
+                                    <a href="https://blong.school/admin/speciality_form/edit_speciality_form/27">Add</a>
+                                    <a href="https://blong.school/admin/speciality/delete/27">Delete</a>
+                                </div>
+                            </div>
+
+                        </th>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <center>
+            <div class="pagination">
+                <a href="#">&laquo;</a>
+                <a class="active" href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">&raquo;</a>
+            </div>
+        </center>
+
+
+
+    </div> <!-- end card body-->
+    <div class="addCat" id="addCat">
+        <div class="frmtxt">
+            <h4 class="title-2">CATEGORY ADD FORM</h4>
+        </div>
+        <div class="line">
+
+        </div>
+        <div class="frm">
+            <h3 style="color: #6c757d; float: left;">Catagory name</h3>
+            <input type="text" name="" id="cat">
+        </div>
+        <center>
+            <div class="but" onclick="add_category()">
+                Submit
+            </div>
+        </center>
+    </div>
+
+    <script>
+        /*
+        let arr=["Frontend developer","backend developer"]
+        let table=document.getElementById("basic-datatable");
+        var y = document.createElement("tr");
+        let markup="<tr><th>1</th><th>MBA Healthcare Students</td><th><div class='dropdown1'><button class='dropbtn'>.  .  .</button><div class='dropdown-content'><a href=''>Add</a><a href=''>Delete</a></div></div></th></tr>"
+        markup=markup+markup+markup+markup+markup+markup+markup
+        table.innerHTML=markup
+        //table.append("1")
+        //table.append("1")
+        */
+        function setTable(data) {
+            console.log(data)
+            let markup=""
+            let temp;
+            console.log("data: ",data)
+            cate=[]
+            for(let i=0;i<data.length;i++){
+                //console.log(data[i][3]);
+                let cat_name=""+data[i][3]+""
+                cate.push(cat_name)
+                temp="<tr><th>"+(i+1)+"</th><th id="+(i+1)+">"+cat_name+"</td><th><div class='dropdown1'><button class='dropbtn'>.  .  .</button><div class='dropdown-content'><a onclick='del_cat("+(i+1)+")' >Delete</a><a>Edit</a></div></div></th></tr>"
+                markup=markup+temp
+            }
+            return markup
+        }
+        function getTableData(cat) {
+            $(document).ready(function () {
+                //console.log(mdata['ret'][0][0])
+                let dict = { name: mdata['ret'][0][0], mail: mdata['ret'][0][2], mobile: mdata['ret'][0][3], "func": "get", del_ed:cat}
+                $.ajax({
+                    url: "/getCatagoryTable",
+                    data: dict,
+                    type: 'POST',
+                    success: function (result, textStatus, jqXHR) {
+                        //console.log(result['ret'])
+                        let ret=setTable(result['ret'])
+                        //console.log(ret)
+                        let table=document.getElementById("basic-datatable");
+                        table.innerHTML=ret
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.log("not bad......")
+                        alert("Error from server....")
+                    },
+                })
+            })
+        }
+        getTableData()
+
+        function del_cat(cat){
+            let dict={name: mdata['ret'][0][0], mail: mdata['ret'][0][2], mobile: mdata['ret'][0][3],del:document.getElementById(cat).innerText}
+            console.log(dict)
+            $.ajax({
+                    url: "/del_cat",
+                    data: dict,
+                    type: 'POST',
+                    success: function (result, textStatus, jqXHR) {
+                        console.log(result)
+                        getTableData()
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.log("not bad......")
+                        alert("Error from server....")
+                    },
+                })
+        }
+
+        function add_cat() {
+            console.log("callle...")
+            document.getElementById("card").style.display = "none";
+            document.getElementById("addCat").style.display = "block";
+        }
+        function add_category() {
+            let cat = document.getElementById("cat").value;
+            let name = mdata['ret'][0][0]
+            let mail = mdata['ret'][0][2]
+            let mobile = mdata['ret'][0][3]
+            console.log(name)
+            let data = { cat: cat, name: name, mail: mail, mobile: mobile };
+            $(document).ready(function () {
+                $.ajax({
+                    url: "http://127.0.0.1:5000/add_cat",
+                    data: data,
+                    type: 'POST',
+                    success: function (result, textStatus, jqXHR) {
+                        if (result == "exists") {
+                            alert("Category exists")
+                        }
+                        else if (result == "done") {
+                            document.getElementById("cat").value = "";
+                            document.getElementById("card").style.display = "block";
+                            document.getElementById("addCat").style.display = "none";
+                            getTableData()
+                        }
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.log("not bad......")
+                        alert("Error from server....")
+                    },
+                })
+            })
+        }
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/sidebar.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        .header {
+            width: 100%;
+            background-color: #313a46;
+            height: 73px;
+        }
+
+        .logo {
+            /*background-color: aliceblue;*/
+            width: 170px;
+            height: 100%;
+            margin-left: 3%;
+        }
+
+        .logo img {
+            width: 100%;
+            margin: 15px auto;
+        }
+
+        .l {
+            display: inline-block;
+            float: left;
+        }
+
+        .menu_icon {
+            margin-top: 20px;
+            margin-left: 20px;
+            display: none;
+            background-color: aliceblue;
+            border-radius: 10px;
+        }
+
+        .menu_icon:active {
+            background-color: #3c4655;
+        }
+
+        .menu_icon img {
+            width: 90%;
+        }
+
+        .btxt {
+            width: 160px;
+            color: aliceblue;
+        }
+
+        .btxt h3 {
+            margin-top: 25px;
+        }
+
+        .vsite {
+            margin-top: 27px;
+        }
+
+        .vsite a {
+            padding: 7px;
+            border: 1px solid white;
+            border-radius: 3px;
+            color: aliceblue;
+            text-decoration: none
+        }
+
+        .vsite a:hover {
+            background-color: aliceblue;
+            color: black;
+        }
+
+        .admin {
+            width: 180px;
+            height: 100%;
+            background-color: #3c4655;
+            float: right;
+            margin-right: 3%;
+        }
+
+        .circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-top: 17px;
+            margin-left: 10px;
+            background-color: #313a46;
+            display: inline-block;
+            float: left;
+        }
+
+        .circle img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        .atxt {
+            display: inline-block;
+            margin-top: 20px;
+            margin-left: 10px;
+            color: aliceblue;
+        }
+
+        .side_show {
+            position: absolute;
+            z-index: 1;
+            display: none;
+            width: 25%;
+            background-color: #ffffff;
+            box-shadow: #3c4655;
+        }
+
+        .hide_but {
+            display: none;
+        }
+
+        @media screen and (max-width: 1000px) {
+            .logo img {
+                content: url("{{ url_for('static',filename='logo-light-sm.png') }}");
+                width: 80%;
+            }
+
+            .logo {
+                margin-left: 15px;
+                width: fit-content;
+            }
+            .navChild img{
+                display: none;
+            }
+
+        }
+
+        @media screen and (max-width: 850px) {
+            .menu_icon {
+                display: block;
+            }
+
+            .side_show {
+                width: 35%;
+            }
+            .below_content{
+                display: block;
+            }
+            .sidebar{
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 650px) {
+            .side_show {
+                width: 50%;
+            }
+
+            .admin {
+                width: fit-content;
+                margin-right: 5%;
+            }
+
+            .atxt {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 460px) {
+            .side_show {
+                width: 70%;
+            }
+
+            .btxt {
+                display: none;
+            }
+
+            .vsite {
+                display: none;
+            }
+
+            .hide_but {
+                display: block;
+                margin-top: 27px;
+                margin-left: 20px;
+            }
+
+            .hide_but a {
+                padding: 7px;
+                border: 1px solid white;
+                border-radius: 3px;
+                color: aliceblue;
+                text-decoration: none
+            }
+
+            .hide_but a:hover {
+                background-color: aliceblue;
+                color: black;
+            }
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            $("#main_fields").load("catagory")
+        })
+    </script>
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo l">
+            <img src="/static/images/logo-light.png" alt="" id="logoa">
+            <!--<img src="images/logo-light.png" alt="">-->
+        </div>
+        <div class="menu_icon l" onclick="display_side('1')">
+            <img src="/static/images/menu.png" alt="">
+            <!--<img src="images/menu.png" alt="">-->
+        </div>
+        <div class="btxt l">
+            <center>
+                <h3>B-Long school</h3>
+            </center>
+        </div>
+        <div class="vsite l">
+            <a href="">Visit website</a>
+        </div>
+        <div class="hide_but l">
+            <a>B-long school</a>
+        </div>
+        <div class="admin">
+            <div class="circle">
+                <img src="/static/images/logo-light.png" alt="" srcset="">
+                <!--<img src="images/logo-light.png" alt="">-->
+            </div>
+            <div class="atxt">
+                B-Long school<br>
+                Admins
+            </div>
+        </div>
+
+    </div>
+
+    <div class="below_content">
+        <div class="sidebar">
+            <div class="side_box">
+                <div class="logoImage">
+                    <center>
+                        <img src="/static/images/logo-light.png" alt="" style="width: 90%;">
+                        <br>
+                        B-long School
+                    </center>
+                </div>
+                <div class="navigation">
+                    <div class="navTitle">
+                        NAVIGATION
+                    </div>
+                    <div class="navContent">
+                        <div class="navChild">
+                            <img src="/static/images/Dashboard.png" alt="">
+                            <div class="childTitle">Dashboard</div>
+                        </div>
+                        <div class="navChild" onclick="show_category()">
+                            <img src="/static/images/Dashboard.png" alt="">
+                            <div class="childTitle">Categories</div>
+                        </div>
+                        <div class="navChild" onclick="show_Courses()">
+                            <img src="/static/images/Dashboard.png" alt="">
+                            <div class="childTitle">Courses</div>
+                        </div>
+                        <div class="navChild" onclick="show_Coupens()">
+                            <img src="/static/images/Dashboard.png" alt="">
+                            <div class="childTitle">Coupens</div>
+                        </div>
+                        <div class="navChild" onclick="show_event()">
+                            <img src="/static/images/Dashboard.png" alt="">
+                            <div class="childTitle">Events</div>
+                        </div>
+
+                        <div class="navChild" onclick="show_instructorOption()">
+                            <img src="/static/images/Dashboard.png" alt="">
+                            <div class="childTitle" id="instructor">Instructor &gt</div>
+                            <div></div>
+                            <div class="subChild" id="subChild">
+                                <div class="childTitle" id="instructor" onclick="show_instructorList()">Instructor list</div>
+                                <div class="childTitle" id="instructor" onclick="show_instructorPay()">Instructor payout</div>
+                                <div class="childTitle" id="instructor">Instructor settings</div>
+                                <div class="childTitle" id="instructor">Instructor applications</div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="main_fields" id="main_fields">
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        function show_Coupens() {
+            $(document).ready(function () {
+                $("#main_fields").load("coupens")
+            })
+
+        }
+        function show_category() {
+            $(document).ready(function () {
+                $("#main_fields").load("catagory")
+            })
+        }
+        function show_Courses() {
+            $(document).ready(function () {
+                $("#main_fields").load("courses")
+            })
+        }
+        function show_event() {
+            $(document).ready(function () {
+                $("#main_fields").load("event")
+            })
+        }
+        function show_instructorOption() {
+            // $("#mainContent").load("instructorlist")
+            let a=document.getElementById("subChild").style.display
+            console.log(a)
+            if (a == "none" || a=="") {
+                document.getElementById("instructor").innerHTML = "Instructor v"
+                document.getElementById("subChild").style.display = "block"
+            }
+            else if(a=="block"){
+                document.getElementById("instructor").innerHTML = "Instructor &gt"
+                document.getElementById("subChild").style.display = "none"
+            }
+        }
+        function show_instructorList(){
+            $(document).ready(function () {
+                $("#main_fields").load("instructorlist")
+            })
+        }
+        function show_instructorPay() {
+            console.log("paying...")
+            $("#main_fields").load("instructorPay")
+        }
+        function show_instructorSet() {
+            $("#mainContent").load("instructorSet")
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            background-color: rgb(244, 244, 244);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .header {
+            width: 100%;
+            padding: 0px;
+            background-color: #ffffff;
+            display: grid;
+            grid-template-columns: 10% 10% 60% 10% 10% auto;
+            box-sizing: border-box;
+        }
+
+        .logo div {
+            width: 100%;
+            margin: 0px auto;
+        }
+
+        .search {
+            width: 100%;
+            /* background-color: antiquewhite; */
+        }
+
+        .search input {
+            display: block;
+            width: 90%;
+            font-size: 25px;
+            border-radius: 5px;
+            border-width: 0.1px;
+            margin: 20px auto;
+            background: none;
+
+        }
+
+        .myCourses {
+            width: 100%;
+            /* background-color: azure; */
+        }
+
+        .myCourses div {
+            width: fit-content;
+            padding: 10px;
+            font-size: 25px;
+            margin: 10px auto;
+            /* background-color: antiquewhite; */
+        }
+
+        .myCourses div:hover {
+            background-color: aliceblue;
+            cursor: pointer;
+        }
+
+        .logout {
+            width: 100%;
+        }
+
+        .logout div {
+            width: 30%;
+            margin: 10px auto;
+        }
+
+        .bodyConatiner {
+            width: 100%;
+            background-color: #29303b;
+            box-sizing: border-box;
+        }
+
+        .mess {
+            /* background-color: #4e70ac; */
+            width: 70%;
+            height: 350px;
+            margin: 0px auto;
+            padding: 0px;
+            display: grid;
+            grid-template-columns: 70% auto;
+        }
+
+        .info {
+            /* height: 300px; */
+            /* background-color: #4e70ac; */
+            display: block;
+            margin: 0px;
+            box-sizing: border-box;
+            /* background-color: aqua; */
+        }
+
+        .courseTitle {
+            /* background-color: #ffffff; */
+            color: #ffffff;
+            /* margin: 0px; */
+            font-family: sans-serif;
+            font-size: 50px;
+            display: block;
+            margin-top: 50px;
+        }
+
+        .discription {
+            display: block;
+            font-size: 25px;
+            color: #ffffff;
+            margin-top: 0px;
+        }
+
+        .card {
+            margin: 0px;
+            background-color: white;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .cardContainer {
+            width: 80%;
+            margin: 0px auto;
+        }
+
+        .aRow {
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: 10% auto;
+            /* background-color: aqua; */
+        }
+
+        .level {
+            color: black;
+            background-color: yellow;
+            width: fit-content;
+            padding: 5px 10px;
+            border-radius: 5px 50% 50% 5px;
+        }
+
+        .estudents {
+            margin-top: 5px;
+            color: #ffffff;
+        }
+
+        .oinfo {
+            color: #ffffff;
+            margin-top: 10px;
+        }
+
+        .oinfo div {
+            display: inline-block;
+        }
+
+        .price {
+            font-size: 40px;
+        }
+
+        .but {
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            margin: 10px auto 5px auto;
+            background-color: #4e70ac;
+            box-sizing: border-box;
+        }
+
+        .outcome {
+            margin-top: 30px;
+            width: 95%;
+            border-width: 1px;
+            border-style: ridge;
+            height: fit-content;
+            padding: 20px;
+            box-sizing: border-box;
+            border-color: #29303b;
+        }
+
+        @media screen and (max-width: 1450px) {
+            .header {
+                display: grid;
+                grid-template-columns: 3% 12% 60% 15% 10% 0px;
+                box-sizing: border-box;
+            }
+
+            .mess {
+                /* background-color: #4e70ac; */
+                display: grid;
+                grid-template-columns: 70% auto;
+            }
+
+        }
+        @media screen and (max-width: 1200px){
+            .mess {
+                /* background-color: #4e70ac; */
+                height: fit-content;
+                width: 90%;
+                display: grid;
+                grid-template-columns: 100%;
+            }
+            .card{
+                margin: 20px auto;
+                width: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="lova">
+        <div class="header">
+            <div></div>
+            <div class="logo">
+                <div>
+                    <img src="/static/images/b-long-logo.png" alt="" style="width: 100%;">
+                </div>
+            </div>
+            <div class="search">
+                <input type="search" placeholder="Search courses eg. Frontend dveloper">
+            </div>
+            <div class="myCourses">
+                <div>
+                    My Courses
+                </div>
+            </div>
+            <div class="logout">
+                <div>
+                    <img src="/static/images/placeholder.png" alt="" width="100%">
+                </div>
+            </div>
+            <div></div>
+        </div>
+        <div class="bodyConatiner">
+            <div class="mess">
+                <div class="info">
+                    <div class="courseTitle">
+                        Frontend Developer
+                    </div>
+                    <div class="discription">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis corporis voluptates quidem
+                        laudantium neque debitis dignissimos doloribus, tempore omnis odio itaque nesciunt ad quod
+                        cupiditate sunt? Aliquam nulla velit id.
+                    </div>
+                    <div class="aRow">
+                        <div class="level">
+                            Beginer
+                        </div>
+                        <div class="estudents">
+                            0 student enrolled
+                        </div>
+                    </div>
+                    <div class="oinfo">
+                        <div class="createdBy">
+                            Created by: Sarvesh gandhere
+                        </div>
+                        <div class="lang">
+                            &nbsp &nbsp &nbsp &nbsp &nbsp Language: English
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="cardContainer">
+                        <div>
+                            <img src="/static/images/course1.jpg" alt="" style="width: 100%;">
+                        </div>
+                        <div class="price">
+                            Rs 500
+                        </div>
+                        <div class="purchase_but">
+                            <div class="Buy but">
+                                Buy Now
+                            </div>
+                            <div class="cart but">
+                                Add to cart
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Other">
+            <div class="mess">
+                <div class="outcome" style="">
+                    <div style="font-size: 25px;">
+                        What will you learn?
+                    </div>
+                    <br>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quis ducimus laudantium corrupti
+                    perferendis cupiditate unde porro nam in, quae suscipit, possimus non ea obcaecati molestias
+                    voluptates? Cupiditate, aliquam delectus?
+                </div>
+                <div></div>
+                <div class="outcome" style="">
+                    <div style="font-size: 25px;">
+                        Requirment
+                    </div>
+                    <br>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quis ducimus laudantium corrupti
+                    perferendis cupiditate unde porro nam in, quae suscipit, possimus non ea obcaecati molestias
+                    voluptates? Cupiditate, aliquam delectus?
+                </div>
+                <div>
+                </div>
+                <div class="disc" style="margin-top: 20px;">
+                    <div style="font-size: 25px;">
+                        Discription
+                    </div>
+                    <div style="margin: 15px 0px 30px 0px;">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime vel reprehenderit
+                        necessitatibus voluptate, placeat repudiandae laudantium ratione quis error, obcaecati
+                        doloremque natus perspiciatis ipsum vero voluptas officiis in sint repellendus?
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Login | B-Long school</title>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="B-Long school" />
+
+    <meta name="keywords" content="LMS,Learning Management System" />
+    <meta name="description" content="Nice application" />
+
+
+    <html>
+
+    <head>
+        <!-- set the encoding of your site -->
+        <meta charset="utf-8">
+        <!-- set the viewport width and initial-scale on mobile devices -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/login.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/header.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/footer.css') }}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i"
+            rel="stylesheet">
+
+    </head>
+    <script>
+        var base_url = 'https://blong.school/';
+    </script>
+</head>
+
+<body class="gray-bg">
+
+    <body>
+        <!-- main container of all the page elements -->
+
+        <div class="header-up">
+            <div class="box">
+                <div class="vl"></div>
+                <div class="box-1">
+
+                    <p>Call :</p>
+                    <a href="tel:123-456-7890">(+91)8422004466</a>
+
+                </div>
+                <div class="vl"></div>
+                <div class="box-2">
+                    <p> Email :</p>
+                    <a href="mailto: info@blongschool.com">info@blongschool.com</a>
+                </div>
+                <div class="vl"></div>
+
+                <div class="right-box">
+                    <i class="fa badge fa-lg" value=0>&#xf07a;</i>
+                    <div class="btn">
+                        <a href="">Login</a>/<a href="">Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- header holder -->
+
+        <nav>
+            <div class="header-p1"><img src="{{ url_for('static',filename='login_images/b-long-logo.png') }}" class="logo"></div>
+            <div id="toggle-btn">
+                <label for="toggle">
+                    <i class="fas fa-bars"></i>
+                </label>
+            </div>
+
+            <input type="checkbox" id="toggle">
+
+            <ul>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/about">COURSE LIST </a></li>
+                <li><a href="/pages"> ABOUT US</a></li>
+                <li><a href="/contact">CONTACT</a></li>
+            </ul>
+        </nav>
+        <section>
+            <div class="text-sign">
+                <p>sign In<a>
+            </div>
+            <div class="ho-lo-nav">
+                <a href="https://blong.school/home">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a class="active">Login</a>
+            </div>
+        </section>
+        <section class="login-pg">
+            <div class="title-main">
+                <div class="title">Login</div>
+                <div class="subtitle">Provide your valid login credentials.</div>
+            </div>
+            <hr style="width: 95%;">
+            <div id="form">
+                <div class="content-box">
+                    <label for="login-email"><span class="input-field-icon"><i class="fas fa-envelope"></i></span>
+                        Email:</label>
+                    <input type="email" class="form-control" name="email" id="mail" placeholder="Email" value=""
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password"><span class="input-field-icon"><i class="fas fa-lock"></i></span>
+                        Password:</label>
+                    <input type="password" class="form-control" name="password" id="pass" placeholder="Password"
+                        value="" required>
+                </div>
+            </div>
+            <hr style="width: 95%;">
+            <div class="forget">
+                <button class="btn" onclick="get_data()">Login</button>
+                <span>Or</span>
+                <a>Forgot
+                    password</a>
+            </div>
+            <div class="account">
+                Do not have an account? <a href="">Sign up</a>
+            </div>
+            </div>
+        </section>
+
+        <!-- footer area container -->
+        <section class="footer-main">
+            <div class="footer-area">
+                <!-- aside -->
+
+                <div class="footer-col">
+                    <div class="logo"><a href=""><img src="{{ url_for('static',filename='login_images/b-long-logo.png') }}"
+                                alt="B-Long School"></a></div>
+
+                    <p>We have over 20 years experience providing expert Educational both businesses and
+                        individuals. Our Investment Committee brings cades the industry expertise in driving our
+                        investment approach. portfolio constructor and allocation</p>
+                    <div class="gray-btn"> <a href="#" class="btn btn-default text-uppercase">Start Leaning Now</a>
+                    </div>
+                </div>
+
+                <div class="footer-col-2">
+                    <h3>Quick Links</h3>
+                    <!-- fooer navigation -->
+                    <hr>
+                    <ul class="fooer-navigation list-unstyled">
+                        <li><a href="https://blong.school/home/courses">All Courses</a></li>
+                        <li><a href="https://blong.school/home/privacy_policy">Privacy Policy</a></li>
+                        <li><a href="https://blong.school/home/terms_and_condition">Terms of Use</a></li>
+                        <li><a href="https://blong.school/home/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col-3">
+                    <h3>contact us</h3>
+                    <hr>
+                    <p>If you want to contact us about any issue our support available to help you 8am-7pm Monday to
+                        saturday.</p>
+                    <!-- ft address -->
+                    <address class="ft-address">
+                        <ul>
+                            <div class="dt-1">
+                                <div class="dt-img"><span class="fas fa-map-marker"><span
+                                            class="sr-only">marker</span></span></div>
+                                <p>Address: F-102, Satelite garden,near Wagheshwari mandir,Dindoshi,Goregaon(E.)</p>
+                            </div>
+                            <div class="dt-2">
+                                <div class="dt-img"><span class="fas fa-phone-square"><span
+                                            class="sr-only">phone</span></span></div>
+                                <div>Call: <a href="tel:+2156237532">+(91) 8422004466</a></div>
+                            </div>
+                            <div class="dt-3">
+                                <div class="dt-img"><span class="fas fa-envelope-square"><span
+                                            class="sr-only">email</span></span></div>
+                                <div>Email: <a href="mailto:info@blongschool.com">info@blongschool.com</a></div>
+                            </div>
+                        </ul>
+                    </address>
+                </div>
+            </div>
+            <hr>
+            <div id="page-footer" class="font-lato">
+                <div class="com-copy">
+                    <p><a href="#">Auriga consulting</a> | &copy; 2020 <a href="#">B-Long School</a>, All rights
+                        reserved</p>
+                </div>
+                <div class="row-holder">
+
+                    <ul>
+                        <li><a href="#"><span class="fab fa-facebook"></span></a></li>
+                        <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                        <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                        <li><a href="#"><span class="fab fa-linkedin"></span></a></li>
+                    </ul>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- <span id="back-top" class="text-center fa fa-caret-up"></span>
+     
+        <div id="loader" class="loader-holder">
+            <div class="block"><img src="https://blong.school/assets/images/svg/hearts.svg" width="100" alt="loader">
+            </div>
+        </div>
+        </div> -->
+
+        <script>
+            function get_data() {
+
+                let mail = document.getElementById("mail").value;
+                let pass = document.getElementById("pass").value;
+                let d = { mail: mail, pass: pass }
+                $(document).ready(function () {
+                    $.ajax({
+                        url: "/request_login_data",
+                        data: d,
+                        type: 'POST',
+                        success: function (data, textStatus, jqXHR) {
+                            console.log(data['ret'])
+                            if (data == false) {
+                                alert("Invalid input")
+                            }
+                            else {
+                                //site = `${window.origin}/afterlogin`;
+                                mdata=data
+                                $("#mainContainer").load("afterlogin")
+                                //window.location.href = site;
+                                console.log("done")
+                                
+                            }
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            console.log("not bad......")
+                            alert("Error from server....")
+                        },
+                    })
+                })
+            }
+        </script>
+
+
+    </body>
+
+
+</html>

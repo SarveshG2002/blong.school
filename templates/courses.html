@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+    <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#sec_form").load("coursesBasic")
+        })
+        function show_add_course() {
+            document.getElementById("add_cat_pannel").style.display = "flex";
+            document.getElementById("courseContent").style.display = "none";
+            document.getElementById("courseMid").style.display = "none";
+        }
+    </script>
+    <style>
+        body {
+            margin: 0px;
+            background-color: whitesmoke;
+        }
+
+        .page-title {
+            background: white;
+            height: 15vh;
+            width: 100%;
+            margin-left: 0px;
+            margin-top: 0px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            box-sizing: border-box;
+        }
+
+        .title-1 {
+            color: #6c757d;
+            font-size: 1.2rem;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .icon-app {
+            font-size: 1.7rem;
+        }
+
+        .title-1 a {
+            color: #6c757d;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            margin-left: 0.5rem;
+            margin-top: 0.1rem;
+        }
+
+        button.add-cat {
+            color: #727cf5;
+            border: 1px solid #727cf5;
+            font-size: 1rem;
+            text-decoration: none;
+            border-radius: 2rem;
+            padding: 0.7rem 1rem;
+            background-color: white;
+        }
+
+        button a {
+            color: #727cf5;
+            font-size: 1rem;
+            text-decoration: none;
+            font-weight: 100;
+        }
+
+        .courseMid {
+            background: rgb(255, 0, 0);
+            height: fit-content;
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            box-sizing: border-box;
+            margin-top: 20px;
+        }
+
+        .C {
+            background-color: white;
+            padding: 20px;
+            border-width: 0px 1px 0px 1px;
+            border-style: solid;
+            border-color: #727cf5;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .courseContent {
+            width: 100%;
+            height: fit-content;
+            padding: 20px;
+            background-color: white;
+            margin-top: 20px;
+            color: #6c757d;
+            font-size: 1.2rem;
+            box-sizing: border-box;
+        }
+
+        .filter_con {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+        }
+
+        .apply_filter {
+            width: 100px;
+            margin-top: 30px;
+            height: fit-content;
+            padding: 10px 2px 10px 2px;
+            font-size: 20px;
+            color: #f1f1f1;
+            background-color: #4755f3;
+            border-radius: 5px;
+            clear: both;
+            text-align: center;
+
+        }
+
+        .spaciality {
+            width: 90%;
+            font-size: 20px;
+            border: 0px sold #6c757d;
+            border-radius: 5px;
+            color: #6c757d;
+            margin-top: 10px;
+            padding: 5px;
+        }
+
+        .arrangeCourse {
+            margin-top: 30px;
+        }
+
+        .line {
+            width: 99%;
+            margin: 80px auto;
+            padding: 1px;
+            border-radius: 5px;
+            background-color: #6c757d;
+        }
+
+        th {
+            border-width: 0px 0px 1px 0px;
+            border-style: solid;
+            border-color: #4755f3;
+        }
+
+        td {
+            border-width: 0px 0px 1px 0px;
+            border-style: solid;
+            padding: 15px;
+        }
+
+        .add_cat_pannel {
+            background: white;
+            width: 100%;
+            margin-left: 0px;
+            display: none;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            box-sizing: border-box;
+            color: #6c757d;
+        }
+
+        .sections {
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto auto;
+            background-color: #727cf5;
+            overflow: auto;
+        }
+
+        .sec_form {
+            background: white;
+            width: 100%;
+            margin-left: 0px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 2rem;
+            box-sizing: border-box;
+        }
+
+        .tables {
+            display: grid;
+            grid-template-columns: 10% 40% 30% 10% 10%;
+        }
+
+        .table_data {
+            border-width: 1px 1px 1px 1px;
+            border-style: solid;
+            border-color: #6c757d;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        @media screen and (max-width: 800px) {
+            .courseMid {
+                grid-template-columns: auto auto;
+            }
+
+            .filter_con {
+                display: grid;
+                grid-template-columns: auto auto;
+            }
+
+            .sections {
+                width: 800px;
+                background-color: #4755f3;
+                grid-template-columns: 114.285714286px 114.285714286px 114.285714286px 114.285714286px 114.285714286px 114.285714286px 114.285714286px;
+            }
+        }
+
+        @media screen and (max-width: 550px) {
+            .courseMid {
+                grid-template-columns: auto;
+            }
+
+            .filter_con {
+                display: grid;
+                grid-template-columns: auto;
+            }
+
+            .spaciality {
+                width: 100%;
+            }
+
+            .apply_filter {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h4 class="page-title">
+        <div class="title-1">
+            <div class="icon-app"><iconify-icon icon="mdi:apple-keyboard-command"></iconify-icon></div>
+            <a>Courses</a>
+        </div>
+        <div onclick="">
+            <button class="add-cat" onclick="show_add_course()">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+                Add new course
+            </button>
+        </div>
+    </h4>
+
+    <div class="add_cat_pannel" id="add_cat_pannel">
+        <div class="sections">
+            <div class="sec1 sec" id="sec1" onclick="showBasic()">
+                Basic
+            </div>
+            <div class="sec2 sec" id="sec2" onclick="showReq()">
+                Requirments
+            </div>
+            <div class="sec3 sec" id="sec3" onclick="showOut()">
+                Outcomes
+            </div>
+            <div class="sec4 sec" id="sec4" onclick="showPric()">
+                Pricing
+            </div>
+            <div class="sec1 sec" id="sec5" onclick="showMedia()">
+                Media
+            </div>
+            <div class="sec1 sec" id="sec6" onclick="showSeo()">
+                Seo
+            </div>
+            <div class="sec1 sec" id="sec7" onclick="showFinish()">
+                Finish
+            </div>
+        </div>
+
+        <div class="sec_form" id="sec_form">
+
+        </div>
+    </div>
+
+
+
+    <div class="courseMid" id="courseMid">
+        <div class="activeC C">
+            Active Course
+        </div>
+        <div class="pendingC C">
+            Pending Course
+        </div>
+        <div class="freeC C">
+            Free Course
+        </div>
+        <div class="paidC C">
+            Paid Course
+        </div>
+    </div>
+    <div class="courseContent" id="courseContent">
+        <h4>COURSE LIST</h4>
+        <div class="filter_con">
+            <div class="filter1 filter">
+                <label for="spaciality">Spaciality</label><br>
+                <select id="spaciality" class="spaciality">
+                </select>
+            </div>
+            <div class="filter2 filter">
+                <label for="Status">Status</label><br>
+                <select id="Status" class="spaciality">
+                    <option value="All">All</option>
+                    <option value="Active">Active</option>
+                    <option value="Pending">Pending</option>
+                </select>
+            </div>
+            <div class="filter3 filter">
+                <label for="Instructor">Instructor</label><br>
+                <select id="Instructor" class="spaciality">
+                    <option value="Instructor">John Doe</option>
+                </select>
+            </div>
+            <div class="filter4 filter">
+                <label for="Price_filter">Price</label><br>
+                <select id="price_filter" class="spaciality">
+                    <option value="All">All</option>
+                    <option value="Paid">Paid</option>
+                    <option value="Free">Free</option>
+                </select>
+            </div>
+            <div class="apply_filter">
+                Apply
+            </div>
+        </div>
+        <div class="arrangeCourse">
+            <div style="float: left;">Show</div>
+            <select id="spaciality" class="" style="float: left;margin-left: 10px; margin-top: 5px;">
+                <option value="1">1</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+            </select>
+            <div style="float: left;margin-left: 10px;">entries</div>
+            <input type="text" class="search" placeholder="Search"
+                style="float: right;font-size: 20px;width: 200px; margin-right: 100px;padding: 5px;">
+        </div>
+        <div class="mainCourse" style="clear: both;">
+            <div class="line" class="line"></div>
+            <div class="tables" id="tables">
+                <div class="index table_data">
+                    1
+                </div>
+                <div class="title table_data">
+                    Deploeyment
+                </div>
+                <div class="category table_data">
+                    IT
+                </div>
+                <div class="enroll table_data">
+                    0 students
+                </div>
+                <div class="price table_data">
+                    300
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var basic;
+        var req;
+        var outcome;
+        var price;
+        var media;
+        var seo;
+        var addCourseDataTemp = {}
+        var addCourseData = {
+            "basic": { courseTitle: "", courseDisc: "", spaciality: "", courseCategory: "" },
+            "req": { courseReq: "" },
+            "outcome": { courseOutcome: "" },
+            "price": { coursePrice: "", courseDiscount: "" },
+            "media": { courseMedia: "", url: "", thumbnail: "" },
+            "seo": { meta: "", mdisc: "" },
+            "user": ""
+        }
+        
+        function set_cate(){
+            let temp="";
+            for(let i=0;i<cate.length;i++){
+                console.log(cate[i])
+                temp=temp+"<option value='"+cate[i]+"'>"+cate[i]+"</option>"
+            }
+            document.getElementById("spaciality").innerHTML=temp;
+        }
+        function setTable(data) {
+            console.log(data)
+            let markup = ""
+            let temp;
+            console.log("data: ", data)
+            for (let i = 0; i < data.length; i++) {
+                console.log(data[i][0]);
+                if(data[i][2]=="0"){
+                    data[i][2]=="free"
+                }
+                temp = "<div class='index table_data'>"+(i+1)+"</div ><div class='title table_data'>"+data[i][0]+"</div><div class='category table_data'>"+data[i][1]+"</div><div class='enroll table_data'>0 students</div><div class='price table_data'>"+data[i][2]+"</div>"
+                markup = markup + temp
+            }
+            /*
+            for(let i in data){
+                console.log(i[3])
+                
+            }*/
+            return markup
+        }
+        function getTableData() {
+            $(document).ready(function () {
+                console.log(mdata)
+                console.log(mdata['ret'][0][0])
+                let dict = { name: mdata['ret'][0][0], mail: mdata['ret'][0][2], mobile: mdata['ret'][0][3], "func": "get" }
+                $.ajax({
+                    url: "/getCourseTable",
+                    data: dict,
+                    type: 'POST',
+                    success: function (result, textStatus, jqXHR) {
+                        console.log(result['ret'])
+                        let ret = setTable(result['ret'])
+                        console.log(ret)
+                        let table = document.getElementById("tables");
+                        table.innerHTML = ret
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.log("not bad......")
+                        alert("Error from server....")
+                    },
+                })
+            })
+        }
+        getTableData()
+        set_cate()
+        function showBasic() {
+            $(document).ready(function () {
+                $("#sec_form").load("coursesBasic")
+                document.getElementById("sec1").style.backgroundColor = "#9098ee"
+                document.getElementById("sec2").style.backgroundColor = "#727cf5"
+                document.getElementById("sec3").style.backgroundColor = "#727cf5"
+                document.getElementById("sec4").style.backgroundColor = "#727cf5"
+                document.getElementById("sec5").style.backgroundColor = "#727cf5"
+                document.getElementById("sec6").style.backgroundColor = "#727cf5"
+                document.getElementById("sec7").style.backgroundColor = "#727cf5"
+            })
+        }
+        function showReq() {
+            $(document).ready(function () {
+                $("#sec_form").load("coursesReq")
+                document.getElementById("sec2").style.backgroundColor = "#9098ee"
+                document.getElementById("sec1").style.backgroundColor = "#727cf5"
+                document.getElementById("sec3").style.backgroundColor = "#727cf5"
+                document.getElementById("sec4").style.backgroundColor = "#727cf5"
+                document.getElementById("sec5").style.backgroundColor = "#727cf5"
+                document.getElementById("sec6").style.backgroundColor = "#727cf5"
+                document.getElementById("sec7").style.backgroundColor = "#727cf5"
+            })
+        }
+        function showOut() {
+            $(document).ready(function () {
+                $("#sec_form").load("coursesOutcome")
+                document.getElementById("sec3").style.backgroundColor = "#9098ee"
+                document.getElementById("sec1").style.backgroundColor = "#727cf5"
+                document.getElementById("sec2").style.backgroundColor = "#727cf5"
+                document.getElementById("sec4").style.backgroundColor = "#727cf5"
+                document.getElementById("sec5").style.backgroundColor = "#727cf5"
+                document.getElementById("sec6").style.backgroundColor = "#727cf5"
+                document.getElementById("sec7").style.backgroundColor = "#727cf5"
+            })
+        }
+        function showPric() {
+            $(document).ready(function () {
+                $("#sec_form").load("coursesPrice")
+                document.getElementById("sec4").style.backgroundColor = "#9098ee"
+                document.getElementById("sec1").style.backgroundColor = "#727cf5"
+                document.getElementById("sec3").style.backgroundColor = "#727cf5"
+                document.getElementById("sec2").style.backgroundColor = "#727cf5"
+                document.getElementById("sec5").style.backgroundColor = "#727cf5"
+                document.getElementById("sec6").style.backgroundColor = "#727cf5"
+                document.getElementById("sec7").style.backgroundColor = "#727cf5"
+            })
+        }
+        function showMedia() {
+            $(document).ready(function () {
+                $("#sec_form").load("coursesMedia")
+                document.getElementById("sec4").style.backgroundColor = "#727cf5"
+                document.getElementById("sec1").style.backgroundColor = "#727cf5"
+                document.getElementById("sec3").style.backgroundColor = "#727cf5"
+                document.getElementById("sec2").style.backgroundColor = "#727cf5"
+                document.getElementById("sec5").style.backgroundColor = "#9098ee"
+                document.getElementById("sec6").style.backgroundColor = "#727cf5"
+                document.getElementById("sec7").style.backgroundColor = "#727cf5"
+            })
+        }
+        function showSeo() {
+            $(document).ready(function () {
+                $("#sec_form").load("coursesSeo")
+                document.getElementById("sec6").style.backgroundColor = "#9098ee"
+                document.getElementById("sec1").style.backgroundColor = "#727cf5"
+                document.getElementById("sec3").style.backgroundColor = "#727cf5"
+                document.getElementById("sec2").style.backgroundColor = "#727cf5"
+                document.getElementById("sec5").style.backgroundColor = "#727cf5"
+                document.getElementById("sec4").style.backgroundColor = "#727cf5"
+                document.getElementById("sec7").style.backgroundColor = "#727cf5"
+            })
+        }
+        function showFinish() {
+            $(document).ready(function () {
+                $("#sec_form").load("courseFinish")
+                document.getElementById("sec7").style.backgroundColor = "#9098ee"
+                document.getElementById("sec1").style.backgroundColor = "#727cf5"
+                document.getElementById("sec2").style.backgroundColor = "#727cf5"
+                document.getElementById("sec3").style.backgroundColor = "#727cf5"
+                document.getElementById("sec4").style.backgroundColor = "#727cf5"
+                document.getElementById("sec5").style.backgroundColor = "#727cf5"
+                document.getElementById("sec6").style.backgroundColor = "#727cf5"
+            })
+        }
+    </script>
+</body>
+
+</html>
